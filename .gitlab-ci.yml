@@ -8,7 +8,6 @@ include:
 
 stages:
     - install
-    - Cache
     - build
     - scan
 
@@ -19,15 +18,10 @@ install_dep:
         - mvn clean install
         - mvn package
 
-cache_mvn:
-    stage: Cache
-    script:
-        - echo "Caching maven dependencies..."
-        - echo "Caching target folder..."
-    cache:
-        paths:
-            - .m2/repository
-            - target
+cache:
+    paths:
+        - .m2/repository
+        - target
 
 build_img:
     stage: build
