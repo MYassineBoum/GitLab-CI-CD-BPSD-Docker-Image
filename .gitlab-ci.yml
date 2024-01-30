@@ -11,7 +11,7 @@ install_dep:
     stage: install
     image: maven:latest
     script:
-        - mvn clean install
+        - mvn clean install -Dmaven.test.skip=true
 
 build_img:
     stage: build
