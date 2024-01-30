@@ -14,8 +14,8 @@ install_dep:
     stage: install
     image: maven:3-sapmachine-17
     script:
-        - mvn clean package
         - mvn clean install
+        - mvn package
 
 build_img:
     stage: build
