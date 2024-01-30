@@ -11,17 +11,17 @@ stages:
     - build
     - scan
 
+cache:
+    paths:
+        - .m2/repository
+        - target
+
 install_dep:
     stage: install
     image: maven:3-sapmachine-17
     script:
         - mvn clean install
         - mvn package
-
-cache:
-    paths:
-        - .m2/repository
-        - target
 
 build_img:
     stage: build
