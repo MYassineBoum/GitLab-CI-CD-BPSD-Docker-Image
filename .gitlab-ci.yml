@@ -11,9 +11,9 @@ install_dep:
     stage: install
     image: openjdk:17
     before_script:    
-        - export MAVEN_HOME=/usr/local/apache-maven
+        - chmod +x mvnw
     script:
-        - $MAVEN_HOME/bin/mvn clean install
+        - mvn clean install
 
 build_img:
     stage: build
