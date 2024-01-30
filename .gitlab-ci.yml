@@ -1,1 +1,25 @@
+variables:
+    IMG_NAME: myassineboum/gitlab-ci-pipeline
+    IMG_TAG: v1
 
+stages:
+    - install
+    - build
+    - deploy
+
+install_dep:
+    stage: install
+    script:
+        - mvn clean install
+
+build_img:
+    stage: build
+    image: docker:latest
+    services:
+        - docker:25.0.1-dind
+    before_script:
+        - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    script:
+        - docker build -t $IMG_NAME:$IMG_TAG .
+        - docker push $IMG_NAME:$IMG_TAG
+    
