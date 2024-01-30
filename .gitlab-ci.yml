@@ -7,13 +7,13 @@ stages:
     - build
     - deploy
 
+image: maven:latest
+
 install_dep:
     stage: install
     image: openjdk:17
-    services:
-        - maven:latest
     script:
-        - mvn clean install -Dmaven.test.skip=true
+        - mvn clean install
 
 build_img:
     stage: build
