@@ -5,4 +5,4 @@ To use the image of my Spring Boot CRUD application, you can simply type the fol
 <br/><br/>
 I've added container_scanning, it's a good practice because it helps reducing vulnerabilities and risks by analyzing container images.
 <br/><br/>
-For caching, it's a process that speeds up the CI process.
+For caching, it's a way to speed up the CI process.
