@@ -9,6 +9,7 @@ stages:
 
 install_dep:
     stage: install
+    image: openjdk:17
     script:
         - mvn clean install
 
