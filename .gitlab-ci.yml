@@ -1,12 +1,14 @@
 variables:
     IMG_NAME: myassineboum/gitlab-ci-pipeline
     IMG_TAG: v1
+    MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
 include:
   - template: Security/Container-Scanning.gitlab-ci.yml
 
 stages:
     - install
+    - Cache
     - build
     - scan
 
@@ -16,6 +18,12 @@ install_dep:
     script:
         - mvn clean install
         - mvn package
+
+cache:
+    stage: Cache
+    paths:
+        - .m2/repository
+        - target
 
 build_img:
     stage: build
