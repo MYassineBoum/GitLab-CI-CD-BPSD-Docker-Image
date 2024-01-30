@@ -1,7 +1,6 @@
 variables:
     IMG_NAME: myassineboum/gitlab-ci-pipeline
     IMG_TAG: v1
-    MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
 
 stages:
     - install
@@ -12,7 +11,9 @@ install_dep:
     stage: install
     image: maven:latest
     script:
-        - mvn $MAVEN_CLI_OPTS install
+        - which mvn
+        - mvn --version
+        - mvn clean install
 
 build_img:
     stage: build
