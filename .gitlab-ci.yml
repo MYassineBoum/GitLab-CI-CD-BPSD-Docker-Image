@@ -9,10 +9,8 @@ stages:
 
 install_dep:
     stage: install
-    image: maven:latest
+    image: maven:3-sapmachine-17
     script:
-        - which mvn
-        - mvn --version
         - mvn clean install
 
 build_img:
