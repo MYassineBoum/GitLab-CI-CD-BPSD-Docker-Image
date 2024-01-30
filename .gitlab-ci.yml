@@ -9,7 +9,7 @@ stages:
 
 install_dep:
     stage: install
-    image: maven:3.3-jdk-8
+    image: maven:3.9.3-ibmjava
     script:
         - mvn clean install
 
