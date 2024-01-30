@@ -19,11 +19,15 @@ install_dep:
         - mvn clean install
         - mvn package
 
-cache:
+cache_mvn:
     stage: Cache
-    paths:
-        - .m2/repository
-        - target
+    script:
+        - echo "Caching maven dependencies..."
+        - echo "Caching target folder..."
+    cache:
+        paths:
+            - .m2/repository
+            - target
 
 build_img:
     stage: build
