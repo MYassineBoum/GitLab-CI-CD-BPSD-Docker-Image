@@ -2,10 +2,13 @@ variables:
     IMG_NAME: myassineboum/gitlab-ci-pipeline
     IMG_TAG: v1
 
+include:
+  - template: Security/Container-Scanning.gitlab-ci.yml
+
 stages:
     - install
     - build
-    - deploy
+    - scan
 
 install_dep:
     stage: install
@@ -23,4 +26,10 @@ build_img:
     script:
         - docker build -t $IMG_NAME:$IMG_TAG .
         - docker push $IMG_NAME:$IMG_TAG
-    
+
+container_scanning:
+    stage: scan
+    script:
+        - echo "Scanning the image..."
+    variables:
+        CS_IMAGE: $IMG_NAME:$IMG_TAG
