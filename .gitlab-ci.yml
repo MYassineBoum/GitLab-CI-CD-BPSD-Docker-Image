@@ -10,8 +10,10 @@ stages:
 install_dep:
     stage: install
     image: openjdk:17
+    before_script:    
+        - export MAVEN_HOME=/usr/local/apache-maven
     script:
-        - mvn clean install
+        - $MAVEN_HOME/bin/mvn clean install
 
 build_img:
     stage: build
