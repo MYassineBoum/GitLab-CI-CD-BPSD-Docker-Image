@@ -7,12 +7,11 @@ stages:
     - build
     - deploy
 
-image: maven:latest
-
 install_dep:
     stage: install
     image: openjdk:17
     script:
+        - apt-get update && apt-get install -y maven
         - mvn clean install
 
 build_img:
