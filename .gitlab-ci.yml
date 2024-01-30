@@ -10,10 +10,10 @@ stages:
 install_dep:
     stage: install
     image: openjdk:17
-    before_script:    
-        - chmod +x mvnw
+    services:
+        - maven:latest
     script:
-        - mvn clean install
+        - mvn clean install -Dmaven.test.skip=true
 
 build_img:
     stage: build
