@@ -19,7 +19,7 @@ build_img:
     services:
         - docker:25.0.1-dind
     before_script:
-        - echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+        - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
     script:
         - docker build -t $IMG_NAME:$IMG_TAG .
         - docker push $IMG_NAME:$IMG_TAG
