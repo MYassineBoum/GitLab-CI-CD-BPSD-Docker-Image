@@ -1,4 +1,3 @@
-![image](https://github.com/MYassineBoum/GitLab-CI-BPS-Docker-Image/assets/115194839/efc66a4f-07d8-439c-bee1-f8df9ccb2a6f)# GitLab-CI-BPS-Docker-Image
 To use the image of my Spring Boot CRUD application, you can simply type the following command:
 <br/><br/>
 <code>docker pull myassineboum/gitlab-ci-pipeline:v1</code>
