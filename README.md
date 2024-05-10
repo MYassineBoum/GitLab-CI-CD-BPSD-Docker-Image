@@ -2,9 +2,9 @@ To use the image of my Spring Boot CRUD application, you can simply type the fol
 <br/><br/>
 <code>docker pull myassineboum/gitlab-ci-pipeline:v1</code>
 <br/><br/>
-I've added container_scanning, it's a good practice because it helps reducing vulnerabilities and risks by analyzing container images.
+Adding container_scanning is a pretty good practice, as it helps reducing vulnerabilities and risks via images analysis.
 <br/><br/>
-For caching, it's a way to speed up the CI process.
+Caching serves as a way to speed up the CI process.
 <br/><br/>
 By enabling SAST on GitLab Ultimate, we can get the Vulnerability Report:
 <br/>
