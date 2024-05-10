@@ -6,6 +6,6 @@ Adding container_scanning is a pretty good practice, as it helps reducing vulner
 <br/><br/>
 Caching serves as a way to speed up the CI process.
 <br/><br/>
-By enabling SAST on GitLab Ultimate, we can get the Vulnerability Report:
+By enabling SAST on GitLab Ultimate, we can get the complete Vulnerability Report:
 <br/>
 ![image](https://github.com/MYassineBoum/GitLab-CI-BPS-Docker-Image/assets/115194839/ce88f5cc-beda-4819-982d-da41985c4895)
